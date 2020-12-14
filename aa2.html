@@ -8,6 +8,9 @@
 		padding: 0;
 		margin: 0;
 	}
+	ul,li{
+			list-style: none;
+	}
 	a{
 		text-decoration: none;
 		color: black;
@@ -16,6 +19,7 @@
 		width: 1200px;
 		margin: 0 auto;
 	}
+
 	.top1{
 		width: 1100px;
 		height: 90px;
@@ -61,10 +65,12 @@
 		left: 270px;
 		top: 20px;
 	}
-	.nav{
+	.navyuan{
 		width: 1000px;
 		height: 40px;
 		margin: 0 auto;
+		position: relative;
+		z-index: 2;
 	}
 	.ulone li{
 		float: left;
@@ -89,12 +95,65 @@
 		background-color: #00A4FF;
 	}
 	.ultwo>li:hover>a{color: white;}
-	.banner{
+	
+	.box{
 		width: 1200px;
-		height: 307px;
+		height: 430px;
 		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
 		margin-bottom: 20px;
 	}
+	.slider{
+		width: 8400px;
+		position: absolute;
+		left: -1200px;
+
+	}
+	.slide{
+		width: 1200px;
+		overflow: hidden;
+		float: left;
+	}
+	.box>span{
+		display: block;
+		width: 30px;
+		height: 50px;
+		text-align: center;
+		cursor: pointer;
+		color: #fff;
+		top: 175px;
+		line-height: 50px;
+		background: rgb(255,125,0);
+		font-size: 30px;
+		position: absolute;
+		opacity: 0;
+	}
+	#leftbtu{
+		left: 30px;
+	}
+	#rightbtu{
+		right: 30px;
+	}
+	.nav{
+		position: absolute;
+		left: 500px;
+		bottom: 20px;
+	}
+	.nav>li{
+		float: left;
+		width: 12px;
+		height: 12px;
+		background: #ccc;
+		cursor: pointer;
+		margin: 0 10px;
+		border-radius: 50%;
+	}
+	.nav .active{
+		background-color: orange;
+	}
+
+
 	.HsCk{
 		width: 1200px;
 		height: 20px;
@@ -233,19 +292,127 @@
 		margin-top: 30px;
 		margin-bottom: 20px;
 	}
+	#backtop{
+		width: 80px;
+		height: 80px;
+		border-radius: 50%; 
+		background-image: url('images/55.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		position: fixed;
+		top: 80%;
+		right: 40px;
+		z-index: 6;
+
+	}
+	#asignin{
+		text-align: center;
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		position: fixed;
+		top: 40%;
+		left: 40%;
+		z-index: 99;
+		background-color: white;
+		opacity: 0.8;
+	}
+	#x {
+		width: 15px;
+		height:18px;
+		border-radius: 50%;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		border: none;
+	}
+	#ttext {
+		width: 80px;
+		height: 50px;
+		line-height: 50px;
+		background-color: red;
+		text-align: center;
+		border: none;
+		position: absolute;
+		top: 130px;
+		left: 60px;
+	}
+	#asignin p{
+		margin-top: 7px;
+		margin-bottom: 13px;
+		text-align: center;
+	}
+	#asignup{
+		text-align: center;
+		width: 200px;
+		height: 300px;
+		border: 1px solid black;
+		position: fixed;
+		top: 40%;
+		left: 40%;
+		z-index: 99;
+		background-color: white;
+		opacity: 0.8;
+	}
+	#x1 {
+		width: 15px;
+		height:18px;
+		border-radius: 50%;
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		border: none;
+	}
+	#ttext1 {
+		width: 80px;
+		height: 50px;
+		line-height: 50px;
+		background-color: red;
+		text-align: center;
+		border: none;
+		position: absolute;
+		top: 230px;
+		left: 60px;
+	}
+	#asignup p{
+		margin-top: 7px;
+		margin-bottom: 13px;
+		text-align: center;
+	}
 	</style>
+	<script src="js/animate.js"></script>
 </head>
 <body>
+	<div id="backtop"></div>
+	<div id="asignin">
+		<p>Username</p>
+		<input type="" name="">
+		<p>Password</p>
+		<input type="password" name="">
+		<button id="x">×</button>
+		<button id="ttext">Sign In!</button>
+	</div>
+	<div id="asignup">
+		<p>Username</p>
+		<input type="" name="">
+		<p>Password</p>
+		<input type="password" name="">
+		<p>Phone Number</p>
+		<input type="password" name="">
+		<button id="x1">×</button>
+		<button id="ttext1">Sign Up!</button>
+	</div>
 	<div class="top1">
 		<div class="logo"><img src="images/logo2.png"></div>
 		<div class="sslan"><input type="text" name="sousuo" value="Search" class="shuru"><input type="button" name="tijiao" class="tj"></div>
 		<div class="login">
-			<a href="">Sign in</a> | <a href="">Sign up</a>
+			<button id="sinbtu">Sign in</button> | <button id="supbtu">Sign up</button>
 		</div>
 		<div class="biaoti">Paris Military Aircraft Trade Fair</div>
 	</div>
 	<hr>
-	<div class="nav">
+	<div class="navyuan">
 		<ul class="ulone">
 			<li><a href="">Hot model</a></li>
 			<li><a href="">Fighter</a><ul class="ultwo"><li><a href="">Russian fighter</a></li><li><a href="">American fighter</a></li></ul></li>
@@ -253,7 +420,26 @@
 			<li><a href="">attacker</a><ul class="ultwo"><li><a href="">Russian attacker</a></li><li><a href="">American attacker</a></li></ul></li>
 		</ul>
 	</div>
-	<div class="banner"><a href=""><img src="images/banner1.png"></a></div>
+	<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="images/ae.png" alt=""></div>
+			<div class="slide"><img src="images/aa.png" alt=""></div>
+			<div class="slide"><img src="images/ab.png" alt=""></div>
+			<div class="slide"><img src="images/ac.png" alt=""></div>
+			<div class="slide"><img src="images/ad.png" alt=""></div>
+			<div class="slide"><img src="images/ae.png" alt=""></div>
+			<div class="slide"><img src="images/aa.png" alt=""></div>
+		</div>
+		<span id="leftbtu"><</span>
+		<span id="rightbtu">></span>
+		<ul class="nav" id="nav">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
 	<div class="HsCk"><p>Hot Products</p><a href="">View all</a></div>
 	<div class="remen">
 		<div class="zhanxiao zhanxiao1"><div><a href=""><p>F-22 Raptor</p><p>USD 1,2000,0000</p></a></div></div>
@@ -278,5 +464,130 @@
 		<div class="jiaru">Want to join us:
 			<a href="">Click Here</a></div>
 	</div>
+	<script type="text/javascript">
+		var slider=document.getElementById("slider");
+		var box=document.getElementById("box");
+		 var oNavlist = document.getElementById("nav").children;
+		var leftbtu=document.getElementById("leftbtu");
+		var rightbtu=document.getElementById("rightbtu");
+		var index=1;
+		var timer;
+		var Move=false;
+		var backtop=document.getElementById("backtop");
+		var sinbtu=document.getElementById("sinbtu");
+		var flag=0;
+
+		for(var i=0;i<oNavlist.length;i++){
+				oNavlist[i].undernum=i;
+
+				oNavlist[i].onclick=function(){
+					index=this.undernum+1;
+					navmove();
+					animate(slider,{left:-1200*index});
+				}
+			}
+		function prev(){
+			if(Move){
+				return;
+			}
+			Move=true;
+			index--;
+			navmove();
+			animate(slider,{left:-1200*index},function(){
+				if(index==0){
+					slider.style.left="-6000px";
+					index=5;
+				}
+				Move=false;
+			});
+
+
+		}
+		function next(){
+			if(Move){
+				return;
+			}
+			Move=true;
+			index++;
+			navmove();
+			animate(slider,{left:-1200*index},function () {
+				if(index == 6){
+					slider.style.left="-1200px";
+					index=1;
+				}
+				Move=false;
+			});
+		}
+
+		leftbtu.onclick=prev;
+		rightbtu.onclick=next;
+
+
+		
+		box.onmouseover=function (){
+			animate(leftbtu,{opacity:50});
+			animate(rightbtu,{opacity:50});
+			clearInterval(timer);
+		}
+		box.onmouseout=function (){
+			animate(leftbtu,{opacity:0});
+			animate(rightbtu,{opacity:0});
+			timer=setInterval(next, 3000);
+		}
+		function navmove(){
+			for(var i=0;i<oNavlist.length;i++){
+				oNavlist[i].className="";
+			}
+			if(index>5){
+				oNavlist[0].className="active";
+			}else if(index<=0){
+				oNavlist[4].className = "active";
+			}else {
+				oNavlist[index-1].className = "active";
+			}
+
+		}
+
+		timer=setInterval(next, 3000);
+		backtop.onclick=function (){
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
+		document.getElementById("asignin").style.display="none";
+		document.getElementById("asignup").style.display="none";
+		sinbtu.onclick=function(){
+			if(flag==1){
+				return;
+			}
+			flag=1;
+			document.getElementById("asignin").style.display="block";
+		}
+		var x=document.getElementById("x");
+		var ttext=document.getElementById("ttext");
+
+		function closeb(){
+			flag=0;
+			document.getElementById("asignin").style.display="none";
+		}
+		x.onclick=closeb;
+		ttext.onclick=closeb;
+		var asignup=document.getElementById("asignup");
+		var supbtu=document.getElementById("supbtu");
+		var x1=document.getElementById("x1");
+		var ttext1=document.getElementById("ttext1");
+		supbtu.onclick=function (){
+			if(flag==1){
+				return;
+			}
+			flag=1;
+			document.getElementById("asignup").style.display="block";
+		}
+		function closea(){
+			flag=0;
+			document.getElementById("asignup").style.display="none";
+		}
+		x1.onclick=closea;
+		ttext1.onclick=closea;
+		
+	</script>
 </body>
 </html>
